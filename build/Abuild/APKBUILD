@@ -2,7 +2,7 @@
 # Maintainer: Felix Xing <fxing@qnx.com>
 pkgname=dbus-glib
 pkgver=0.114
-pkgrel=0
+pkgrel=${pkgrel:-0}
 pkgdesc="GLib bindings for DBUS"
 #options="!check" # FIXME: tests fails
 url="https://www.freedesktop.org/wiki/Software/DBusBindings"
@@ -42,6 +42,7 @@ dev() {
     amove usr/bin/dbus-binding-tool
 }
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 c341cc0778edbf776d3e1a6d3cd9c136766544cb4b7239d6affa2fa246fa9c5716fe4d674c9bb56b36ee140344663bf967f70841ad132f978a662a22cc9a3a0d  dbus-glib-0.114.tar.gz
 "
